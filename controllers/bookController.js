@@ -209,7 +209,7 @@ exports.book_delete_post = function(req, res) {
         }
         else {
             // Author has no books. Delete object and redirect to the list of authors.
-            Author.findByIdAndRemove(req.body.bookid, function deleteAuthor(err) {
+            Book.findByIdAndRemove(req.body.bookid, function deleteAuthor(err) {
                 if (err) { return next(err); }
                 // Success - go to author list
                 res.redirect('/catalog/books')
